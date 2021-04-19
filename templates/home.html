@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wnameth=device-wnameth, initial-scale=1.0">
+    <title>Crop Recommendation System </title>
+	<h1>Suggest best crop</h1>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+</head>
+<body>
+	<div class="inputdata">		
+		<form action="{{ url_for('predict')}}" method="POST">
+			Nitrogen <input type="text" name="n">
+			Phosphorous <input type="text" name="p">
+			Potassium <input type="text" name="k"><br>
+			Temperature <input type="text" name="t">
+			Humidity <input type="text" name="h">
+			ph <input type="text" name="ph">
+			Rainfall <input type="text" name="r">
+			<button type="submit" class="button">Predict</button>	
+		</form>
+		<br><br>
+	</div>
+	{{pred}}
+</body>
+    
+</html>
