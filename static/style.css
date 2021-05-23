@@ -16,6 +16,26 @@ body {
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
+
+h2 {
+  text-align: right;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+select{
+	background-color: black;
+	color: white;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
 .button {
 	background-color: white; 
 	border-radius: 4px;
@@ -38,7 +58,7 @@ body {
 
 
 
-input { 
+input,select { 
 	width: 100%; 
 	margin-bottom: 10px; 
 	background: rgba(0,0,0,0.3);
