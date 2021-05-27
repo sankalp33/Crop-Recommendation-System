@@ -1,15 +1,14 @@
 from flask import Flask,request,url_for,redirect,render_template
+from flask_pymongo import PyMongo
 import pandas as pd
 import pickle
 import numpy as np
-import csv
-import os
-
-PEOPLE_FOLDER = os.path.join('static')
 
 
 app =  Flask(__name__)
-app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
+app.config["MONGO_URI"] = "mongodb+srv://admin:bhavans7@cluster0.ucvac.mongodb.net/cropdata?ssl=true&ssl_cert_reqs=CERT_NONE"
+mongo = PyMongo(app)
+db_operations = mongo.db.cropdata
 
 model = pickle.load(open('finalized_model.sav','rb'))
 
@@ -23,11 +22,10 @@ def contribute():
 
 @app.route('/save1',methods=['POST'])   
 def save1():
-    data = list(request.form.values())   
-    with open('crop_dataset.csv','a',newline='') as csvfile:
-        csvwriter = csv.writer(csvfile) 
-        csvwriter.writerow(data)
-    return 'done'
+    data = { "n": request.values.get('n'), "p" : request.values.get('p'),"k":request.values.get('k'),"t": request.values.get('t'),"h": request.values.get('h'),"ph": request.values.get('ph'),"r": request.values.get('r'),"crop": request.values.get('crop')}
+    db_operations.insert_one(data)
+    result = {'result' : 'Created successfully'}
+    return result
     
 @app.route('/predict',methods=['POST'])
 def predict():    
