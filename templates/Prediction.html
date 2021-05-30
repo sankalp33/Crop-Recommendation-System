@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+
+	
+<div  class="lrm lrm pt-5 mt-5 pt-5 mt-5">	
+	<script type="text/javascript">
+		function flashMessage() {
+      		if ("{{ msg }}" != "") {
+        		alert("{{ msg }}");
+      		}
+    	}
+		flashMessage();
+	 </script>
+	<h1 class="text-center">Suggest best crop</h1>
+	<div class="predictform">
+		<form action="{{ url_for('predict')}}" method="POST"></br>
+			<div class="form-group">
+				<label>Nitrogen</label>
+				<input type="number" min="0" max="150" id="n" name="n" required></br>
+			</div>
+			<div class="form-group">
+				<label >Phosphorous</label>
+				<input type="number" min="5" max="150" id="p" name="p"required>
+			</div>
+			<div class="form-group">
+				<label >Potassium</label>
+				<input type="number" min="5" max="205" name="k"required><br>
+			</div>
+			<div class="form-group">
+				<label >Temperature</label>
+				<input type="number" min="8" max="44" step="0.0001" name="t"required>
+			</div>
+			<div class="form-group">
+				<label >Humidity</label>
+				<input type="number" min="14" max="100" step="0.0001" name="h"required>
+			</div>	
+			<div class="form-group">
+				<label >ph</label>
+				<input type="number" min="3" max="10" step="0.0001" name="ph"required>
+			</div>		
+			<div class="form-group">
+				<label >Rainfall</label>
+				<input type="number" min="20" max="300" step="0.0001" name="r"required></div></br>
+				<button type="submit" class="btn btn-primary btn-lg">Predict</button>	
+			</div>
+		</div>					
+		</form>
+		<br><br>
+	{{pred}}
+</div>
+{%endblock%}
