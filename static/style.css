@@ -15,7 +15,6 @@ body{
     background-color: #eeeeee;
 }
 .predictform{
- 
   text-align:  center;
   background-color: #00adb5;
   
@@ -88,8 +87,11 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 	width:400px;
 	height:400px;
   }
+  .imgzoom{
+    background-color: rgb(148, 247, 148);
+  }
   .imgzoom img:hover {
-    transform: scale(1.5); 
+    transform: scale(1.3); 
   }
   .imgzoom img{
     transition: transform .2s; 
