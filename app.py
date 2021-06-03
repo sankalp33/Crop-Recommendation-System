@@ -11,12 +11,18 @@ app =  Flask(__name__)
 app.config["MONGO_URI"] = "mongodb+srv://admin:bhavans7@cluster0.ucvac.mongodb.net/cropdata?ssl=true&ssl_cert_reqs=CERT_NONE"
 mongo = PyMongo(app)
 db_operations = mongo.db.cropdata
+db_operations1 = mongo.db.feedback
 
 model = pickle.load(open('finalized_model.sav','rb'))
 
 @app.route('/')
 def home():
     return render_template("Home.html")
+
+@app.route('/feedback')
+def feedback():
+    return render_template("Feedback.html")
+
 
 @app.route('/Cropinfo')
 def cropinfo():
@@ -124,6 +130,12 @@ def save1():
     data = { "n": request.values.get('n'), "p" : request.values.get('p'),"k":request.values.get('k'),"t": request.values.get('t'),"h": request.values.get('h'),"ph": request.values.get('ph'),"r": request.values.get('r'),"crop": request.values.get('crop')}
     db_operations.insert_one(data)
     return render_template('contribute.html',flash_message="True")
+
+@app.route('/savefeedback',methods=['POST'])   
+def savefeedback():
+    data = { "Name": request.values.get('name'), "emailid" : request.values.get('emailid'),"feedback":request.values.get('feedback')}
+    db_operations1.insert_one(data)
+    return render_template('feedback.html',flash_message="True")
     
 @app.route('/predict',methods=['POST'])
 def predict():    
