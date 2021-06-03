@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+
+	
+<div  class="lrm pt-5 mt-5 pt-5 mt-5">
+	<script type="text/javascript">
+		function flashMessage() {
+      		if ("{{ flash_message }}" == "True") {
+        		alert("Feedback submitted successfully!");
+      		}
+    	}
+		flashMessage();
+	 </script>
+	<h1 style="text-align: center;">Contribute data</h1>
+	<div class="predictform">		
+		<form action="{{ url_for('savefeedback')}}" method="POST"></br>
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name='name' id='name' size="40"onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'required>
+			</div>
+			<div class="form-group">
+				<label >Email</label>
+				<input type="email" name="emailid" id="emailid"size="40"required>
+			</div>
+            <label >Feedback</label>
+            <span>                  
+				<textarea rows="4" cols="50" id="feedback"name="feedback"></textarea><br>
+			</span>
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+		</form>
+		<br><br>
+	</div>		
+</div>
+{%endblock%}
