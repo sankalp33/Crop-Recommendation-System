@@ -135,7 +135,7 @@ def save1():
 def savefeedback():
     data = { "Name": request.values.get('name'), "emailid" : request.values.get('emailid'),"feedback":request.values.get('feedback')}
     db_operations1.insert_one(data)
-    return render_template('feedback.html',flash_message="True")
+    return render_template('Feedback.html',flash_message="True")
     
 @app.route('/predict',methods=['POST'])
 def predict():    
