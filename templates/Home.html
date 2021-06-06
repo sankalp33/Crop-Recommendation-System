@@ -1,8 +1,39 @@
 {% extends 'base.html' %}
 {% block body %}	
 
-<div  class="lrm lrm pt-5 mt-5">
-    <img src="static/home.jpg" alt="Crop Recommendation System">  
+
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container">
+            <h1>Welcome to <span>Crop Recommendation System</span>
+            </h1></div>
+    </section>
+    <div  class="lrm lrm pt-5 mt-5">
+        <section id="featured-services" class="featured-services">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                        <h4 class="title"><a href="{{ url_for('prediction') }}">Crop Prediction</a></h4>
+                        <p class="description">Predict crop using soil and weather parameters</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                          <h4 class="title"><a href="{{ url_for('cropinfo') }}">Know your Crops</a></h4>
+                          <p class="description">Get crop information and guidelines</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                          <h4 class="title"><a href="{{ url_for('contribute') }}">Contribute data</a></h4>
+                          <p class="description">Improve Crop dataset</p>
+                        </div>
+                      </div>
+<section id="About">
+</br>
 <p ><strong>About</strong></p>
 
 <p>India is one among the oldest countries which is practicing agriculture. But in recent times the trends in agriculture have drastically evolved due to globalization. Various factors have affected the health of agriculture in India. Many new technologies have been evolved to regain the health. One such technique is precision agriculture. Precision agriculture is the technology of &ldquo;site-specific&rdquo; farming. It has provided us with the advantage of efficient input, output and better decisions regarding farming. Although precision agriculture has delivered better improvements it is still facing certain issues.</p>
@@ -13,4 +44,5 @@
 
 <p>Weather components such as rainfall, temperature, relative humidity, etc. also has an impact on crop growth, development and yields. This weather data can be collected through local weather station. We can also observe weather pattern over the years to plan crops accordingly.</p>
 </div>
+</section>
 {%endblock%}
