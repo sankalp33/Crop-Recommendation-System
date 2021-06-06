@@ -92,7 +92,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 	height:400px;
   }
   .imgzoom{
-    background-color: rgb(148, 247, 148);
+    background-color: rgb(79, 204, 162);
   }
   .imgzoom img:hover {
     transform: scale(1.3); 
@@ -100,4 +100,127 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
   .imgzoom img{
     transition: transform .2s; 
     margin: 0 auto;
+  }
+
+ #hero{
+  width: 100%;
+  height: 75vh;
+  background: url("/static/Home1.jpg") top left;
+  background-size: cover;
+  position: relative;
+  }
+
+  #hero .container {
+   
+    padding-top: 15px;
+  }
+  
+  @media (max-width: 992px) {
+    #hero .container {
+      padding-top: 15px;
+    }
+  }
+  
+  #hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #1c1c64;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #hero h1 span {
+    color: #1c1c64;
+  }
+
+  .featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(17, 131, 131);
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+    left: 50%;
+  }
+  
+  .featured-services .icon-box::before {
+    content: '';
+    position: absolute;
+    background: #cbe0fb;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  
+  .featured-services .icon-box:hover::before {
+    background: #106eea;
+    top: 0;
+    border-radius: 0px;
+  }
+  
+  .featured-services .icon {
+    margin-bottom: 15px;
+  }
+  
+  .featured-services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color: #106eea;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .featured-services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .featured-services .title a {
+    color: rgb(255, 255, 255);
+  }
+  
+  .featured-services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+    color: rgb(255, 255, 255);
+  }
+  
+  .featured-services .icon-box:hover .title a, .featured-services .icon-box:hover .description {
+    color: #fff;
+  }
+  
+  .featured-services .icon-box:hover .icon i {
+    color: #fff;
+  }
+
+  .back-to-top {
+    position: fixed;
+    display: none;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+  }
+  
+  .back-to-top i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: #106eea;
+    color: #fff;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i:hover {
+    background: #3284f1;
+    color: #fff;
   }
